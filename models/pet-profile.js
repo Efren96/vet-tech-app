@@ -11,7 +11,11 @@ Pet.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        firstName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        lastName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -31,7 +35,7 @@ Pet.init(
             type: DataType.BOOLEAN,
             allowNull: true
         },
-        vacciationNeeded: {
+        vaccinationNeeded: {
             type: DataType.BOOLEAN,
             allowNull: true
         },
