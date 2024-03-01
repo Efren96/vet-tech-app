@@ -20,6 +20,5 @@ if (process.env.JAWSDB_URL) {
         }
     );
 }
-
 // exports the sequelize connection
 module.exports = sequelize;
