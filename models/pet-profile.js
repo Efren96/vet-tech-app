@@ -15,12 +15,41 @@ Pet.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        ownerName: {
-            type: DataTypes.STRING,
+        age: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
-        age: {
-            type: 
+        species: {
+            type: DataType.STRING,
+            allowNull: false,
+        },
+        weight: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        neutered: {
+            type: DataType.BOOLEAN,
+            allowNull: true
+        },
+        vacciationNeeded: {
+            type: DataType.BOOLEAN,
+            allowNull: true
+        },
+        owner_id: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            references: {
+                model: 'owner',
+                key: 'id',
+            },
         }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'pet',
     }
-)
+);
+module.exports = Pet;
