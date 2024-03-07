@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { ownerProfile } = require('../../models');
-const sequelize = require('../../config/connections');
-const withAuth = require('../../utils/auth');
+const sequelize = require('../../config/connection');
 
 // gets all owners
 router.get('/', (req, res) => {
@@ -38,7 +37,7 @@ router.get('/:id', (req, res) => {
 });
 
 // creates owner
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     ownerProfile.create({
         fisrtName: req.body.fisrtNameame,
         lastName: req.body.lastName,
@@ -55,7 +54,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // updates owner
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
     ownerProfile.update({
         fisrtName: req.body.fisrtNameame,
         lastName: req.body.lastName,
@@ -81,7 +80,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // deletes owner
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     ownerProfile.destroy({
         where: {
             id: req.params.id
