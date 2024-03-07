@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { petProfile } = require('../../models');
-const sequelize = require('../../config/connections');
-const withAuth = require('../../utils/auth');
+const sequelize = require('../../config/connection');
+// const withAuth = require('../../utils/auth');
 
 // gets all pets
 router.get('/', (req, res) => {
@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
 });
 
 // creates pet
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     petProfile.create({
         fisrtName: req.body.fisrtNameame,
         lastName: req.body.lastName,
@@ -57,7 +57,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // updates pet
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
     petProfile.update({
         fisrtName: req.body.fisrtNameame,
         lastName: req.body.lastName,
@@ -85,7 +85,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // deletes pet
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     petProfile.destroy({
         where: {
             id: req.params.id
