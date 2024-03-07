@@ -1,5 +1,5 @@
 const Pet = require('./pet-profile');
-const Owner = require('./owner-profile');
+const Owner = require('./ownerProfile');
 
 Owner.hasMany(Pet, {
     foreignKey: "owner_id",
