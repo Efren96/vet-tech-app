@@ -1,7 +1,7 @@
 // import the sequelize lib
-const Sequelize = require("sequelize");
+const Sequelize = require('sequelize');
 // uses dotenv information and sets environment variables to the process.env object
-require("dotenv").config();
+require('dotenv').config();
 
 // creates sequelize as a variable
 let sequelize;
@@ -10,15 +10,17 @@ let sequelize;
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
-    sequelize - new Sequelize(
+    sequelize = new Sequelize(
         process.env.DB_NAME,
         process.env.DB_USER,
         process.env.DB_PASSWORD,
         {
-            host: "localhost",
-            dialect: "mysql"
+            host: 'localhost',
+            dialect: 'mysql',
+            port: 3006,
         }
     );
 }
+
 // exports the sequelize connection
 module.exports = sequelize;

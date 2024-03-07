@@ -12,10 +12,10 @@ router.post("/", async (req, res) => {
             password: req.body.password,
         });
         
-        //how does it have access to session?????????
-        //what exactly does this piece of code do??????
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.user_id = dbUserInfo.id;
+            req.session.name = dbUserInfo.name;
 
             res.status(200).json(dbUserInfo);
         });
@@ -43,9 +43,7 @@ router.post("/login", async (req, res) => {
             res.json({ message: "Incorrect email or password. Please try again!" });
             return;
         }
-        
-        //what exactly does this do???????????
-        //what does this method do
+    
         const validateUserPassword = await dbUserInfo.checkPassword(req.body.password);
 
         // if the password is incorrect, display error message
@@ -55,9 +53,11 @@ router.post("/login", async (req, res) => {
             return;
         }
 
-        //what is this?????? how does it have access to session????
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.user_id = dbUserInfo.id;
+            req.session.name = dbUserInfo.name;
+            
             console.log("File: user-routes.js ~ line 56 ~ req.session.save ~ req.session.cookie", req.session.cookie);
         
             res.status(200);
