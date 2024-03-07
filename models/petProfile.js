@@ -24,7 +24,7 @@ Pet.init(
             allowNull: false,
         },
         species: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         weight: {
@@ -32,15 +32,15 @@ Pet.init(
             allowNull: false,
         },
         neutered: {
-            type: DataType.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             allowNull: true
         },
         vaccinationNeeded: {
-            type: DataType.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             allowNull: true
         },
         owner_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'owner',

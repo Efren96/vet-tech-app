@@ -24,21 +24,13 @@ Owner.init(
             allowNull: false,
         },
         phoneNumber: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         homeAddress: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        pet_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references: {
-                model: 'pets',
-                key: 'id',
-            },
-        }
     },
     {
         sequelize,
