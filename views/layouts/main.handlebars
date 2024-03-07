@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{!-- main handlebars is the skeleton of the website, will show on every page --}}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetTech</title>
+    <link rel="stylesheet" type="text/css" href="/css/jass.css">
+</head>
+
+<body>
+    <header>
+        <h1>Vet Tech Logo goes here</h1>
+    </header>
+
+    {{#if loggedIn}}
+    <div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/petdashboard">Pet Dashboard</a>
+            <a href="/ownerdashboard">Owner Dashboard</a>
+            <button id="logout">Logout</button>
+        </nav>
+    </div>
+    {{/if}}
+
+    <div>
+        {{!-- renders contents of sub layout --}}
+        {{{ body }}}
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
