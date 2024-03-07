@@ -8,23 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VetTech</title>
     {{!-- <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
 </head>
 
-<body>
+<body style="background-color: rgb(76,72,72)">
     <header>
-        <h1>Vet Tech Logo goes here</h1>
-    </header>
-
     {{#if loggedIn}}
     <div>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/petdashboard">Pet Dashboard</a>
-            <a href="/ownerdashboard">Owner Dashboard</a>
-            <button id="logout">Logout</button>
+        <nav class="navbar navbar-light" style="background-color: rgb(76,72,72);">
+            <a href="/" class="navbar-text text-white mx-auto text-decoration-none">Home</a>
+            <a href="/petdashboard" class="navbar-text text-white mx-auto text-decoration-none">Pet Dashboard</a>
+            <a href="/ownerdashboard" class="navbar-text text-white mx-auto text-decoration-none">Owner Dashboard</a>
+            <button id="logout" class="mx-auto">Logout</button>
         </nav>
     </div>
     {{/if}}
+    </header>
+
+    <h1>VetTech logo goes here</h1>
 
     <div>
         {{!-- renders contents of sub layout --}}
@@ -34,6 +35,7 @@
     {{#if loggedIn}}
     <script src="/js/logout.js"></script>
     {{/if}}
+    <script src="/js/bootstrap.js"></script>
 </body>
 
 </html>
