@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { petProfile } = require('../../models');
-const sequelize = require('../../config/connection');
+const sequelize = require('../../config/connections');
+const withAuth = require('../../utils/auth');
 
 // gets all pets
 router.get('/', (req, res) => {
