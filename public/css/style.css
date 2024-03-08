@@ -80,3 +80,7 @@ h1 {
 .search-button:hover{
     background-color: rgb(238, 178, 67);
 }
+
+.login-img {
+    width: 50rem;
+}
