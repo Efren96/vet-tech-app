@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { ownerProfile } = require('../../models');
-const sequelize = require('../../config/connections');
-const withAuth = require('../../utils/auth');
+const sequelize = require('../../config/connection');
 
 // gets all owners
 router.get('/', (req, res) => {
