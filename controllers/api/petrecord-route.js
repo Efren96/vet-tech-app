@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Pet } = require('../../models');
+const { Pet, Owner } = require('../../models');
 const sequelize = require('../../config/connection');
 
 // gets all pets

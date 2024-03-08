@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
       loggedIn: req.session.loggedIn,
   });
     return;
-  }
+  } 
   res.render('login');
 });
 

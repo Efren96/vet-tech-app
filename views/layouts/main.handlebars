@@ -7,55 +7,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VetTech</title>
-    {{!--
-    <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
        <link rel="stylesheet" href="/css/style.css" />
 </head>
 
-<body>
+<body style="background-color: rgb(76,72,72);">
     <!--header-->
+    {{#if loggedIn}}
     <header class="header">
         <!--header title -->
-        <img class="nav-logo" src="/images/Vet (2000 x 600 px).svg" alt="vet-tech-text-logo">
+        <img class="nav-logo" src="/images/VETLOGO.svg" alt="vet-tech-text-logo">
         <div class="nav-div">
         <a href="/api/petdashboard" class="navbar-text">Pets</a>
         <a href="/api/ownerdashboard" class="navbar-text">Owners</a>
-                <a href="/api/logout" class="navbar-text" id="logout">Logout</a>
+                <a href="/api/user/logout" class="navbar-text" id="logout">Logout</a>
                 </div>
         <!-- search button -->
         <button class="search-button">Search</button>
         <!-- search input -->
         <input class="search-input" type="text" placeholder="Search Pets or Owners..">
     </header>
+    {{/if}}
 
-    
-    {{!-- <header>
-        {{#if loggedIn}}
-        <div>
-            <nav class="navbar navbar-light" style="background-color: rgb(76,72,72);">
-                <a href="/" class="navbar-text text-white mx-auto text-decoration-none">Home</a>
-                <a href="/api/petdashboard" class="navbar-text text-white mx-auto text-decoration-none">Pet
-                    Dashboard</a>
-                <a href="/api/ownerdashboard" class="navbar-text text-white mx-auto text-decoration-none">Owner
-                    Dashboard</a>
-                <button id="logout" class="mx-auto">Logout</button>
-            </nav>
-        </div>
-        {{/if}}
-    </header>
-
-    <div>
-        <img src="../../public/images/logo.png" alt="vet-tech-text-logo">
-    </div> --}}
     <div>
         {{!-- renders contents of sub layout --}}
         {{{ body }}}
     </div>
 
-    {{!-- {{#if loggedIn}}
+    {{#if loggedIn}}
     <script src="/js/logout.js"></script>
-    {{/if}} --}}
+    {{/if}}
     <script src="/js/bootstrap.js"></script>
 </body>
 
