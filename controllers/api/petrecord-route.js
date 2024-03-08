@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
         const pets = dbPetData.map((pet) => pet.get({ plain: true }));
         res.render("petdashboard", { pets, loggedIn: true });
     })
-        // .then(dbPetData => res.json(dbPetData.reverse()))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -25,26 +24,28 @@ router.get('/', (req, res) => {
 });
 
 // gets pets by id
-router.get('/:id', (req, res) => {
-    Pet.findOne({
-        where: {
-            id: req.params.id
-        },
-        attributes: [],
-        
-    })
-        .then(dbPetData => {
-            if (!dbPetData) {
-                res.status(404).json({ message: 'Could not find pet with this id' });
-                return;
-            }
-            res.json(dbPetData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+router.get('/:id', async (req, res) => {
+    try {
+      const dbPetData = await Pet.findByPk(req.params.id, {
+        include: [
+          {
+            model: Owner,
+            attributes: [
+              'id',
+              "firstName",
+              "lastName"
+            ],
+          },
+        ],
+      });
+  
+      const pet = dbPetData.get({ plain: true });
+      res.render('petprofile', { pet, loggedIn: true });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
 // creates pet
 router.post('/', (req, res) => {

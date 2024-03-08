@@ -160,5 +160,9 @@ h1 {
 }
 
 .login-img {
-    width: 50rem;
+    width: 40rem;
+}
+
+.hidden {
+    display: none;
 }
