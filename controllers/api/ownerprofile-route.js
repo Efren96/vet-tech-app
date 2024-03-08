@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { ownerProfile } = require('../../models');
+const { Owner } = require('../../models');
 const sequelize = require('../../config/connection');
 
 // gets all owners
 router.get('/', (req, res) => {
-    ownerProfile.findAll({
+    Owner.findAll({
         attributes: [],
     })
         .then(dbOwnerData => res.json(dbOwnerData.reverse()))
@@ -16,14 +16,14 @@ router.get('/', (req, res) => {
 
 // gets owner by id
 router.get('/:id', (req, res) => {
-    ownerProfile.findOne({
+    Owner.findOne({
         where: {
             id: req.params.id
         },
         attributes: [],
         
     })
-        .then(dbPetData => {
+        .then(dbOwnerData => {
             if (!dbOwnerData) {
                 res.status(404).json({ message: 'Could not find owner with this id' });
                 return;
@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
 
 // creates owner
 router.post('/', (req, res) => {
-    ownerProfile.create({
+    Owner.create({
         fisrtName: req.body.fisrtNameame,
         lastName: req.body.lastName,
         age: req.body.age,
@@ -55,7 +55,7 @@ router.post('/', (req, res) => {
 
 // updates owner
 router.put('/:id', (req, res) => {
-    ownerProfile.update({
+    Owner.update({
         fisrtName: req.body.fisrtNameame,
         lastName: req.body.lastName,
         age: req.body.age,
@@ -81,7 +81,7 @@ router.put('/:id', (req, res) => {
 
 // deletes owner
 router.delete('/:id', (req, res) => {
-    ownerProfile.destroy({
+    Owner.destroy({
         where: {
             id: req.params.id
         }
