@@ -16,7 +16,7 @@
     {{#if loggedIn}}
     <header class="header">
         <!--header title -->
-        <img class="nav-logo" src="/images/Vet (2000 x 600 px).svg" alt="vet-tech-text-logo">
+        <img class="nav-logo" src="/images/VETLOGO.svg" alt="vet-tech-text-logo">
         <a href="/api/petdashboard" class="navbar-pet-text text-white mx-auto text-decoration-none">Pets</a>
         <a href="/api/ownerdashboard" class="navbar-owner-text text-white mx-auto text-decoration-none">Owners</a>
         <!-- search button -->
@@ -27,24 +27,6 @@
     </header>
     {{/if}}
 
-    {{!-- <header>
-        {{#if loggedIn}}
-        <div>
-            <nav class="navbar navbar-light" style="background-color: rgb(76,72,72);">
-                <a href="/" class="navbar-text text-white mx-auto text-decoration-none">Home</a>
-                <a href="/api/petdashboard" class="navbar-text text-white mx-auto text-decoration-none">Pet
-                    Dashboard</a>
-                <a href="/api/ownerdashboard" class="navbar-text text-white mx-auto text-decoration-none">Owner
-                    Dashboard</a>
-                <button id="logout" class="mx-auto">Logout</button>
-            </nav>
-        </div>
-        {{/if}}
-    </header>
-
-    <div>
-        <img src="../../public/images/logo.png" alt="vet-tech-text-logo">
-    </div> --}}
     <div>
         {{!-- renders contents of sub layout --}}
         {{{ body }}}

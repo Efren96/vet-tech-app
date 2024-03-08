@@ -1,17 +1,43 @@
 const router = require('express').Router();
-const { Pet } = require('../../models');
+const { Pet, Owner } = require('../../models');
 const sequelize = require('../../config/connection');
 
 // gets all pets
-router.get('/', (req, res) => {
-    Pet.findAll({
-        attributes: [],
-    })
-        .then(dbPetData => res.json(dbPetData.reverse()))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+// router.get('/', (req, res) => {
+//     Pet.findAll({
+//         attributes: [],
+//     })
+//         .then(dbPetData => res.json(dbPetData.reverse()))
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
+
+router.get('/', async (req, res) => {
+    try {
+        // makes it wait until you find all the category data to avoid errors 
+        const petData = await Pet.findAll({
+            include: [
+                {
+                    model: Owner,
+                    attributes: ["firstName", "lastName"]
+                },
+            ],
         });
+
+        const pets = petData.map((pet) =>
+            pet.get({ plain: true })
+        );
+        res.render("homepage", {
+            pets,
+            loggedIn: req.session.loggedIn,
+        });
+    } catch (err) {
+        // allows you to see error in terminal instead of just the number
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 // gets pets by id
