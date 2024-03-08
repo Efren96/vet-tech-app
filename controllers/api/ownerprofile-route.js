@@ -3,41 +3,20 @@ const { Owner, Pet } = require('../../models');
 const sequelize = require('../../config/connection');
 
 // gets all owners
-// router.get('/', (req, res) => {
-//     Owner.findAll({
-//         attributes: [],
-//     })
-//         .then(dbOwnerData => res.json(dbOwnerData.reverse()))
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
-
-router.get('/', async (req, res) => {
-    try {
-        // makes it wait until you find all the category data to avoid errors 
-        const ownerData = await Owner.findAll({
-            include: [
-                {
-                    model: Pet,
-                    attributes: ["firstName"]
-                },
-            ],
+router.get('/', (req, res) => {
+    Owner.findAll({
+        attributes: ['firstName',
+            'lastName',
+            'phoneNumber'],
+    })
+    .then(dbOwnerData => {
+        const owners = dbOwnerData.map((owner) => owner.get({ plain: true }));
+        res.render("ownerdashboard", { owners, loggedIn: true });
+    })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         });
-
-        const owners = ownerData.map((owner) =>
-            owner.get({ plain: true })
-        );
-        res.render("ownerdashboard", {
-            owners,
-            loggedIn: req.session.loggedIn,
-        });
-    } catch (err) {
-        // allows you to see error in terminal instead of just the number
-        console.log(err);
-        res.status(500).json(err);
-    }
 });
 
 // gets owner by id
@@ -47,7 +26,7 @@ router.get('/:id', (req, res) => {
             id: req.params.id
         },
         attributes: [],
-        
+
     })
         .then(dbOwnerData => {
             if (!dbOwnerData) {
