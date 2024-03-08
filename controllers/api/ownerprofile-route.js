@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { ownerProfile } = require('../../models');
+const { Owner } = require('../../models');
 const sequelize = require('../../config/connection');
 // const withAuth = require('../../utils/auth');
 
 // gets all owners
 router.get('/', (req, res) => {
-    ownerProfile.findAll({
+    Owner.findAll({
         attributes: [],
     })
         .then(dbOwnerData => res.json(dbOwnerData.reverse()))
