@@ -5,7 +5,7 @@ const sequelize = require('../../config/connection');
 
 // gets all pets
 router.get('/', (req, res) => {
-    petProfile.findAll({
+    Pet.findAll({
         attributes: [],
     })
         .then(dbPetData => res.json(dbPetData.reverse()))
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 // gets pets by id
 router.get('/:id', (req, res) => {
-    petProfile.findOne({
+    Pet.findOne({
         where: {
             id: req.params.id
         },
@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
 
 // creates pet
 router.post('/', (req, res) => {
-    petProfile.create({
+    Pet.create({
         fisrtName: req.body.fisrtNameame,
         lastName: req.body.lastName,
         age: req.body.age,
@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
 
 // updates pet
 router.put('/:id', (req, res) => {
-    petProfile.update({
+    Pet.update({
         fisrtName: req.body.fisrtNameame,
         lastName: req.body.lastName,
         age: req.body.age,
@@ -86,7 +86,7 @@ router.put('/:id', (req, res) => {
 
 // deletes pet
 router.delete('/:id', (req, res) => {
-    petProfile.destroy({
+    Pet.destroy({
         where: {
             id: req.params.id
         }
