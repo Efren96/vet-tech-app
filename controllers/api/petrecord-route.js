@@ -40,6 +40,7 @@ router.get('/:id', async (req, res) => {
       });
   
       const pet = dbPetData.get({ plain: true });
+      console.log(pet);
       res.render('petprofile', { pet, loggedIn: true });
     } catch (err) {
       console.log(err);

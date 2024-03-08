@@ -5,14 +5,16 @@ const sequelize = require('../../config/connection');
 // gets all owners
 router.get('/', (req, res) => {
     Owner.findAll({
-        attributes: ['firstName',
+        attributes: [
+            'id',
+            'firstName',
             'lastName',
             'phoneNumber'],
     })
-    .then(dbOwnerData => {
-        const owners = dbOwnerData.map((owner) => owner.get({ plain: true }));
-        res.render("ownerdashboard", { owners, loggedIn: true });
-    })
+        .then(dbOwnerData => {
+            const owners = dbOwnerData.map((owner) => owner.get({ plain: true }));
+            res.render("ownerdashboard", { owners, loggedIn: true });
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -20,25 +22,27 @@ router.get('/', (req, res) => {
 });
 
 // gets owner by id
-router.get('/:id', (req, res) => {
-    Owner.findOne({
-        where: {
-            id: req.params.id
-        },
-        attributes: [],
-
-    })
-        .then(dbOwnerData => {
-            if (!dbOwnerData) {
-                res.status(404).json({ message: 'Could not find owner with this id' });
-                return;
-            }
-            res.json(dbOwnerData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+router.get('/:id', async (req, res) => {
+    try {
+        const dbOwnerData = await Owner.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Pet,
+                    attributes: [
+                        'id',
+                        "firstName",
+                    ],
+                },
+            ],
         });
+
+        const owner = dbOwnerData.get({ plain: true });
+        console.log(owner);
+        res.render('ownerprofile', { owner, loggedIn: true });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 // creates owner

@@ -1,4 +1,18 @@
-<div class="d-flex justify-content-center">
+<section class="card">
+    <header>
+        <h2>{{owner.firstName}} {{owner.lastName}}</h2>
+    </header>
+
+    <p>{{owner.age}}</p>
+    <p>{{owner.phoneNumber}}</p>
+    <p>{{owner.homeAddress}}</p>
+    <p>Pet: {{owner.pet.firstName}}</p>
+    <p id="owner-id" class="hidden">{{owner.id}}</p>
+    </section>
+
+
+
+{{!-- <div class="d-flex justify-content-center">
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
@@ -23,4 +37,4 @@
     </div>
 </div>
 </div>
-</div>
+</div> --}}
