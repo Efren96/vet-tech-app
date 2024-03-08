@@ -31,6 +31,7 @@ router.get('/:id', async (req, res) => {
                     attributes: [
                         'id',
                         "firstName",
+                        "owner_id"
                     ],
                 },
             ],

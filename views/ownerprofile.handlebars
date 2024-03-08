@@ -6,7 +6,11 @@
     <p>{{owner.age}}</p>
     <p>{{owner.phoneNumber}}</p>
     <p>{{owner.homeAddress}}</p>
-    <p>Pet: {{owner.pet.firstName}}</p>
+    <ul>Pets:
+    {{#each owner.pets}}
+    <li>{{this.firstName}}</li>
+    {{/each}}
+    </ul>
     <p id="owner-id" class="hidden">{{owner.id}}</p>
     </section>
 
