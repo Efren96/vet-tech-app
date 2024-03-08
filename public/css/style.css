@@ -1,0 +1,82 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans";
+
+
+}
+
+/**/
+.header{
+    background-color: rgb(37, 37, 37);
+    position: fixed;
+    width: 100%;
+    
+}
+
+.nav-logo{
+    width: 270px;
+    margin-left: 20px;
+}
+
+.navbar-pet-text{
+padding: 20px;
+margin-left: 100px;
+}
+
+/*styling for the search input*/
+.search-input{
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    width: 350px;
+    border: none;
+    border-radius: 5px;
+    float: right;
+    display: inline;
+    outline: none;
+}
+
+/*styling for the h1 element which is the main title in the header*/
+h1 {
+    font-weight: lighter;
+    font-family: 'bebas neue';
+    font-size: 65px;
+    background: -webkit-linear-gradient(rgb(255, 210, 128), rgb(255, 136, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 20%;
+    padding: 15px;
+    display: inline;
+}
+/*styling for the main container*/
+.container {
+    display: flex;
+    padding: 25px;
+}
+
+/*styling for the search button in the header*/
+.search-button {
+    background-color: rgb(226, 165, 33);
+    box-shadow: 0 0 1px rgb(44, 44, 44);
+    width: 100px;
+    padding: 10px 0;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    background-color: rgb(226, 165, 33);
+    float: right;
+    margin-top: 18px;
+    margin-right: 10px;
+
+}
+
+/*styling for search button after you hover over it*/
+.search-button:hover{
+    background-color: rgb(238, 178, 67);
+}
