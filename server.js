@@ -36,6 +36,8 @@ app.set("view engine", "handlebars");
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/css", express.static("./node_modules/bootstrap/dist/css"));
+app.use("/js", express.static("./node_modules/bootstrap/dist/js"));
 
 // setting up routes for use by server
 app.use(routes);
@@ -46,5 +48,5 @@ app.use(routes);
 // false means do not delete database
 // true means connect to database but drops data in the database, this will make you start with nothing 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}!`));
+    app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
 });
