@@ -5,9 +5,14 @@ const sequelize = require('../../config/connection');
 // gets all owners
 router.get('/', (req, res) => {
     Owner.findAll({
-        attributes: [],
+        attributes: ['firstName',
+            'lastName',
+            'phoneNumber'],
     })
-        .then(dbOwnerData => res.json(dbOwnerData.reverse()))
+    .then(dbOwnerData => {
+        const owners = dbOwnerData.map((owner) => owner.get({ plain: true }));
+        res.render("ownerdashboard", { owners, loggedIn: true });
+    })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -21,7 +26,7 @@ router.get('/:id', (req, res) => {
             id: req.params.id
         },
         attributes: [],
-        
+
     })
         .then(dbOwnerData => {
             if (!dbOwnerData) {

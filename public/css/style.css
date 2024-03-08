@@ -1,33 +1,45 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "DM Sans";
 
-
 }
 
 /**/
-.header{
+.header {
     background-color: rgb(37, 37, 37);
     position: fixed;
     width: 100%;
-    
+
 }
 
-.nav-logo{
+.nav-logo {
     width: 270px;
     margin-left: 20px;
 }
 
-.navbar-pet-text{
-padding: 20px;
-margin-left: 100px;
+
+.navbar-text {
+   color: white;
+    padding: 20px;
+    margin-left: 80px;
+    font-size: 20px;
+    display: inline;
+    text-decoration: none;
 }
 
+.nav-div{
+    display: inline-flex;
+}
+
+.navbar-text:hover{
+    color: rgb(241, 173, 44);
+}
+
+
 /*styling for the search input*/
-.search-input{
+.search-input {
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -52,6 +64,7 @@ h1 {
     padding: 15px;
     display: inline;
 }
+
 /*styling for the main container*/
 .container {
     display: flex;
@@ -69,7 +82,7 @@ h1 {
     cursor: pointer;
     color: white;
     font-size: 15px;
-    background-color: rgb(226, 165, 33);
+    background-color: rgb(240, 154, 16);
     float: right;
     margin-top: 18px;
     margin-right: 10px;
@@ -77,6 +90,71 @@ h1 {
 }
 
 /*styling for search button after you hover over it*/
-.search-button:hover{
-    background-color: rgb(238, 178, 67);
+.search-button:hover {
+    background-color:  rgb(255, 183, 0);
+}
+
+.pet-card{
+    display: inline-block;
+    margin-top: 125px;
+    margin-left: 45px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
+    height: 370px;
+}
+
+.owner-card{
+    display: inline-block;
+    margin-top: 125px;
+    margin-left: 45px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
+    height: 386px;
+}
+.card-body{
+    width: 265px;
+}
+
+.owner-card-body{
+    width: 259px;
+}
+
+.card-btn{
+    float: right;
+    background-color: rgb(240, 154, 16);
+    border: none;
+    margin-left: 120px;
+}
+
+.owner-card-btn{
+    float: right;
+    background-color: rgb(240, 154, 16);
+    border: none;
+    margin-left: 120px;
+}
+
+.card-btn:hover {
+    background-color:  rgb(255, 183, 0);
+}
+
+.owner-card-btn:hover {
+    background-color:  rgb(255, 183, 0);
+}
+
+
+.card-text{
+    margin-bottom: 2px;
+}
+.card-middle-text{
+    margin-bottom: -10px;
+    display: inline-block;
+}
+
+.owner-card-middle-text{
+    margin-bottom: -35px;
+    display: inline-block;
 }

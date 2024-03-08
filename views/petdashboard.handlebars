@@ -1,4 +1,10 @@
-<section id="owners-dashboard">
+ {{#each pets as |pet| }}
+    {{> petcard pet}}
+    {{/each}}
+
+
+
+{{!-- <section id="owners-dashboard">
     <h1> Furry Friends </h1>
    
    <div class="card" style="width: 18rem;">
@@ -18,4 +24,4 @@
 
 </section>
 
-<script src="../public/js/petdashboard.js"></script>
+<script src="../public/js/petdashboard.js"></script> --}}

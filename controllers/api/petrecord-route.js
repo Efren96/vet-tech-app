@@ -5,9 +5,19 @@ const sequelize = require('../../config/connection');
 // gets all pets
 router.get('/', (req, res) => {
     Pet.findAll({
-        attributes: [],
+        attributes: [
+            'id',
+            'firstName',
+            'lastName',
+            'age',
+            'species'
+        ],
     })
-        .then(dbPetData => res.json(dbPetData.reverse()))
+    .then(dbPetData => {
+        const pets = dbPetData.map((pet) => pet.get({ plain: true }));
+        res.render("petdashboard", { pets, loggedIn: true });
+    })
+        // .then(dbPetData => res.json(dbPetData.reverse()))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
