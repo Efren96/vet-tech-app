@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
         const pets = dbPetData.map((pet) => pet.get({ plain: true }));
         res.render("petdashboard", { pets, loggedIn: true });
     })
-        // .then(dbPetData => res.json(dbPetData.reverse()))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -25,38 +24,42 @@ router.get('/', (req, res) => {
 });
 
 // gets pets by id
-router.get('/:id', (req, res) => {
-    Pet.findOne({
-        where: {
-            id: req.params.id
-        },
-        attributes: [],
-        
-    })
-        .then(dbPetData => {
-            if (!dbPetData) {
-                res.status(404).json({ message: 'Could not find pet with this id' });
-                return;
-            }
-            res.json(dbPetData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+router.get('/:id', async (req, res) => {
+    try {
+      const dbPetData = await Pet.findByPk(req.params.id, {
+        include: [
+          {
+            model: Owner,
+            attributes: [
+              'id',
+              "firstName",
+              "lastName"
+            ],
+          },
+        ],
+      });
+  
+      const pet = dbPetData.get({ plain: true });
+      console.log(pet);
+      res.render('petprofile', { pet, loggedIn: true });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
 // creates pet
 router.post('/', (req, res) => {
     Pet.create({
-        fisrtName: req.body.fisrtNameame,
-        lastName: req.body.lastName,
+        firstName: req.body.pet_firstName,
+        lastName: req.body.pet_lastName,
         age: req.body.age,
         species: req.body.species,
         weight: req.body.weight,
-        neutered: req.body.neutered,
-        vaccinationNeeded: req.body.vaccinationNeeded,
-        owner_id: req.session.owner_id,
+        neutered: req.body.isNeutered,
+        vaccinationNeeded: req.body.needsVaccines,
+        owner_id: req.body.owner_id
+        // how do we do this??
     })
         .then(dbPetData => res.json(dbPetData))
         .catch(err => {

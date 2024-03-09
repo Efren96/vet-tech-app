@@ -1,26 +1,33 @@
-<div class="d-flex justify-content-center">
-        <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Profile Settings</h4>
+<div class="d-flex justify-content-center" style="background-color: #8a8a8a">
+    <div>
+        <img src="/images/owner-profile-placeholder.jpg" alt="Card image cap" class="profile-placeholder-img mb-5">
+    </div>
+    <div class="col-md-5 border-right text-left">
+        <div class="p-3 py-5">
+            <div class="align-items-center mb-3">
+                <h4 class="top-buffer profile-title">{{owner.firstName}} {{owner.lastName}}</h4>
+            </div>
+            <div class="row mt-2">
+                <p class="text-answers"><span class="text-span">Age </span> {{owner.age}}</p>
+                <p class="text-answers"><span class="text-span">Contact Number </span> {{owner.phoneNumber}}</p>
+                <div>
+                    <p class="text-answers"><span class="text-span">Home Address </span>{{owner.homeAddress}}</p>
                 </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">First Name</label><input type="text" class="form-control"></div>
-                    <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control"></div>
-                    <div>
-                      <div class="rounded-circle"><img class="mt-5 d-block mx-auto" width="150px" src="./ex_pfp.jpeg"></div>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><img class="rounded-circle mt-5" width="150px" src=""></div>
-                    <div class="col-md-12"><label class="labels">Age</label><input type="text" class="form-control" ></div>
-                    <div class="col-md-12"><label class="labels">Phone Number</label><input type="text" class="form-control" ></div>
-                    <div class="col-md-12"><label class="labels">Home Address</label><input type="text" class="form-control"></div>
-                </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+            </div>
+            <div>
+                <p class="text-span">Pet/s:</p>
+                {{#each owner.pets}}
+                <p><span class="text-answers">{{this.firstName}}</span></p>
+                {{/each}}
+            </div>
+            <p id="owner-id" class="hidden">{{owner.id}}</p>
+
+            <div>
+                <button id="delete-owner-button" type="button" class="p-2">Delete Owner Profile</button>
+                <button id="update-owner-button" type="button" class="p-2">Update Owner Profile</button>
             </div>
         </div>
     </div>
 </div>
-</div>
-</div>
+
+<script src="/js/ownerprofile.js"></script>

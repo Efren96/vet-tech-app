@@ -160,5 +160,34 @@ h1 {
 }
 
 .login-img {
-    width: 50rem;
+    width: 40rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.top-buffer { 
+    margin-top: 135px
+}
+
+.profile-placeholder-img {
+    margin-top: 12rem;
+    width: 20rem;
+}
+
+.text-answers {
+    color: white;
+    font-weight: normal;
+}
+
+.text-span {
+    color: black;
+    font-weight: bold;
+    }
+
+.profile-title {
+    color: orange;
+    font-size: 65px;
+    font-weight: bold;
 }

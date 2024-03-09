@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
             email: req.body.email,
             password: req.body.password,
         });
-        
+
         req.session.save(() => {
             req.session.loggedIn = true;
             req.session.user_id = dbUserInfo.id;
@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
             res.status(200).json(dbUserInfo);
         });
 
-    // catches and displays any errors
+        // catches and displays any errors
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -43,7 +43,7 @@ router.post("/login", async (req, res) => {
             res.json({ message: "Incorrect email or password. Please try again!" });
             return;
         }
-    
+
         const validateUserPassword = await dbUserInfo.checkPassword(req.body.password);
 
         // if the password is incorrect, display error message
@@ -57,11 +57,11 @@ router.post("/login", async (req, res) => {
             req.session.loggedIn = true;
             req.session.user_id = dbUserInfo.id;
             req.session.name = dbUserInfo.name;
-            
+
             console.log("File: user-routes.js ~ line 56 ~ req.session.save ~ req.session.cookie", req.session.cookie);
-        
+
             res.status(200);
-            res.json({ user: dbUserInfo, message: "Nice! You are logged in."})
+            res.json({ user: dbUserInfo, message: "Nice! You are logged in." })
         });
     } catch (err) {
         console.log(err);

@@ -5,35 +5,15 @@ const sequelize = require('../../config/connection');
 // gets all owners
 router.get('/', (req, res) => {
     Owner.findAll({
-        attributes: ['firstName',
+        attributes: [
+            'id',
+            'firstName',
             'lastName',
             'phoneNumber'],
     })
-    .then(dbOwnerData => {
-        const owners = dbOwnerData.map((owner) => owner.get({ plain: true }));
-        res.render("ownerdashboard", { owners, loggedIn: true });
-    })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
-// gets owner by id
-router.get('/:id', (req, res) => {
-    Owner.findOne({
-        where: {
-            id: req.params.id
-        },
-        attributes: [],
-
-    })
         .then(dbOwnerData => {
-            if (!dbOwnerData) {
-                res.status(404).json({ message: 'Could not find owner with this id' });
-                return;
-            }
-            res.json(dbOwnerData);
+            const owners = dbOwnerData.map((owner) => owner.get({ plain: true }));
+            res.render("ownerdashboard", { owners, loggedIn: true });
         })
         .catch(err => {
             console.log(err);
@@ -41,15 +21,40 @@ router.get('/:id', (req, res) => {
         });
 });
 
+// gets owner by id
+router.get('/:id', async (req, res) => {
+    try {
+        const dbOwnerData = await Owner.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Pet,
+                    attributes: [
+                        'id',
+                        "firstName",
+                        "owner_id"
+                    ],
+                },
+            ],
+        });
+
+        const owner = dbOwnerData.get({ plain: true });
+        console.log(owner);
+        res.render('ownerprofile', { owner, loggedIn: true });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 // creates owner
 router.post('/', (req, res) => {
     Owner.create({
-        fisrtName: req.body.fisrtNameame,
-        lastName: req.body.lastName,
+        firstName: req.body.owner_firstName,
+        lastName: req.body.owner_lastName,
         age: req.body.age,
-        phoneNumber: req.body.phoneNumber,
-        homeAddress: req.body.homeAddress,
-        pet_id: req.session.pet_id,
+        phoneNumber: req.body.phone_number,
+        homeAddress: req.body.home_address,
+        // pet_id: req.session.pet_id, how do we do this part?
     })
         .then(dbOwnerData => res.json(dbOwnerData))
         .catch(err => {
