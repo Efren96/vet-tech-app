@@ -168,7 +168,7 @@ h1 {
 }
 
 .top-buffer { 
-    margin-top: 135px
+    margin-top: 130px
 }
 
 .profile-placeholder-img {
@@ -194,4 +194,20 @@ h1 {
 
 .login-page-color {
     height: 100%;
+}
+
+.add-pet-user-container {
+    background-color: aqua;
+}
+
+.add-owner-card{
+    display: inline-block;
+    justify-content: center;
+    margin-left: 45px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
+    height: 500px;
+    background-color: #A3A3A3;
 }

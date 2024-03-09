@@ -59,7 +59,6 @@ router.post('/', (req, res) => {
         neutered: req.body.isNeutered,
         vaccinationNeeded: req.body.needsVaccines,
         owner_id: req.body.owner_id
-        // how do we do this??
     })
         .then(dbPetData => res.json(dbPetData))
         .catch(err => {
