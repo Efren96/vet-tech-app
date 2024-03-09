@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
         age: req.body.age,
         phoneNumber: req.body.phone_number,
         homeAddress: req.body.home_address,
-        // pet_id: req.session.pet_id,
+        // pet_id: req.session.pet_id, how do we do this part?
     })
         .then(dbOwnerData => res.json(dbOwnerData))
         .catch(err => {

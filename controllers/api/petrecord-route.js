@@ -51,14 +51,15 @@ router.get('/:id', async (req, res) => {
 // creates pet
 router.post('/', (req, res) => {
     Pet.create({
-        fisrtName: req.body.fisrtNameame,
-        lastName: req.body.lastName,
+        firstName: req.body.pet_firstName,
+        lastName: req.body.pet_lastName,
         age: req.body.age,
         species: req.body.species,
         weight: req.body.weight,
-        neutered: req.body.neutered,
-        vaccinationNeeded: req.body.vaccinationNeeded,
-        owner_id: req.session.owner_id,
+        neutered: req.body.isNeutered,
+        vaccinationNeeded: req.body.needsVaccines,
+        owner_id: req.body.owner_id
+        // how do we do this??
     })
         .then(dbPetData => res.json(dbPetData))
         .catch(err => {
