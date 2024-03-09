@@ -16,10 +16,18 @@
             </div>
             <div>
                 <p class="text-span">Pet/s:</p>
-                    {{#each owner.pets}}
+                {{#each owner.pets}}
                 <p><span class="text-answers">{{this.firstName}}</span></p>
                 {{/each}}
             </div>
             <p id="owner-id" class="hidden">{{owner.id}}</p>
+
+            <div>
+                <button id="delete-owner-button" type="button" class="p-2">Delete Owner Profile</button>
+                <button id="update-owner-button" type="button" class="p-2">Update Owner Profile</button>
+            </div>
         </div>
     </div>
+</div>
+
+<script src="/js/ownerprofile.js"></script>

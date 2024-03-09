@@ -49,12 +49,12 @@ router.get('/:id', async (req, res) => {
 // creates owner
 router.post('/', (req, res) => {
     Owner.create({
-        fisrtName: req.body.fisrtNameame,
-        lastName: req.body.lastName,
+        firstName: req.body.owner_firstName,
+        lastName: req.body.owner_lastName,
         age: req.body.age,
-        phoneNumber: req.body.phoneNumber,
-        homeAddress: req.body.homeAddress,
-        pet_id: req.session.pet_id,
+        phoneNumber: req.body.phone_number,
+        homeAddress: req.body.home_address,
+        // pet_id: req.session.pet_id,
     })
         .then(dbOwnerData => res.json(dbOwnerData))
         .catch(err => {
