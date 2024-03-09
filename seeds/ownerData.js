@@ -1,5 +1,17 @@
 const { Owner } = require('../models');
 
+
+const { faker } = require('@faker-js/faker');
+// faker.seed(1);
+
+const randomName = faker.person.firstName();
+const randomLastName = faker.person.lastName();
+
+const randomAge = faker.number.int({ min: 18, max: 80 });
+
+const randomPhone = faker.phone.number();
+const randomAddress = faker.location.streetAddress();
+
 const ownerdata = [
   {
     firstName: "Derek",
@@ -21,7 +33,56 @@ const ownerdata = [
     age: 28,
     phoneNumber: "(1) 281-330-8004",
     homeAddress: "420 Elm St.",
-  }
+  },
+  {
+    firstName: randomName,
+    lastName: randomLastName,
+    age: randomAge,
+    phoneNumber: randomPhone,
+    homeAddress: randomAddress,
+  },
+  {
+    firstName: randomName,
+    lastName: randomLastName,
+    age: randomAge,
+    phoneNumber: randomPhone,
+    homeAddress: randomAddress,
+  },
+  {
+    firstName: randomName,
+    lastName: randomLastName,
+    age: randomAge,
+    phoneNumber: randomPhone,
+    homeAddress: randomAddress,
+  },
+  {
+    firstName: randomName,
+    lastName: randomLastName,
+    age: randomAge,
+    phoneNumber: randomPhone,
+    homeAddress: randomAddress,
+  },
+  {
+    firstName: randomName,
+    lastName: randomLastName,
+    age: randomAge,
+    phoneNumber: randomPhone,
+    homeAddress: randomAddress,
+  },
+  {
+    firstName: randomName,
+    lastName: randomLastName,
+    age: randomAge,
+    phoneNumber: randomPhone,
+    homeAddress: randomAddress,
+  },
+  {
+    firstName: randomName,
+    lastName: randomLastName,
+    age: randomAge,
+    phoneNumber: randomPhone,
+    homeAddress: randomAddress,
+  },
 ];
 
 const seedOwners = () => Owner.bulkCreate(ownerdata);
