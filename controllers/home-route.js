@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Pet, Owner } = require('../models');
+const { withAuth, isAuthenticated } = require("../utils/auth");
 
 // homepage route
-router.get('/', (req, res) => {
+router.get('/', withAuth, isAuthenticated, (req, res) => {
   if (req.session.loggedIn) {
     Pet.findAll({
       attributes: [

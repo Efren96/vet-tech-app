@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const { Pet, Owner } = require('../../models');
 const sequelize = require('../../config/connection');
+const { withAuth, isAuthenticated } = require("../../utils/auth");
 
 // gets all pets
-router.get('/', (req, res) => {
+router.get('/', withAuth, isAuthenticated, (req, res) => {
     Pet.findAll({
         attributes: [
             'id',
@@ -24,7 +25,7 @@ router.get('/', (req, res) => {
 });
 
 // gets pets by id
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, isAuthenticated, async (req, res) => {
     try {
       const dbPetData = await Pet.findByPk(req.params.id, {
         include: [
@@ -49,7 +50,7 @@ router.get('/:id', async (req, res) => {
   });
 
 // creates pet
-router.post('/', (req, res) => {
+router.post('/', withAuth, isAuthenticated, (req, res) => {
     Pet.create({
         firstName: req.body.pet_firstName,
         lastName: req.body.pet_lastName,
@@ -68,7 +69,7 @@ router.post('/', (req, res) => {
 });
 
 // updates pet
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, isAuthenticated, (req, res) => {
     Pet.update({
         firstName: req.body.pet_firstName,
         lastName: req.body.pet_lastName,
@@ -96,7 +97,7 @@ router.put('/:id', (req, res) => {
 });
 
 // deletes pet
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, isAuthenticated, (req, res) => {
     Pet.destroy({
         where: {
             id: req.params.id

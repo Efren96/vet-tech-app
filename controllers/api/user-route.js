@@ -1,6 +1,7 @@
 // imports packages and files
 const router = require("express").Router();
 const { User } = require("../../models");
+const { withAuth, isAuthenticated } = require("../../utils/auth");
 
 // CREATE a new user
 router.post("/", async (req, res) => {
@@ -16,6 +17,7 @@ router.post("/", async (req, res) => {
             req.session.loggedIn = true;
             req.session.user_id = dbUserInfo.id;
             req.session.name = dbUserInfo.name;
+            req.session.user = dbUserInfo;
 
             res.status(200).json(dbUserInfo);
         });
@@ -57,6 +59,7 @@ router.post("/login", async (req, res) => {
             req.session.loggedIn = true;
             req.session.user_id = dbUserInfo.id;
             req.session.name = dbUserInfo.name;
+            req.session.user = dbUserInfo;
 
             console.log("File: user-routes.js ~ line 56 ~ req.session.save ~ req.session.cookie", req.session.cookie);
 
@@ -70,7 +73,7 @@ router.post("/login", async (req, res) => {
 });
 
 // LOGOUT
-router.post("/logout", (req, res) => {
+router.post("/logout", withAuth, isAuthenticated, (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
