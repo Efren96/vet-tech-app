@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center" style="background-color: #8a8a8a">
+<div class="d-flex justify-content-center" style="background-color: #ffffff">
     <div>
         <img src="/images/pet-placeholder.jpg" alt="Card image cap" class="profile-placeholder-img mb-5">
     </div>
@@ -8,11 +8,11 @@
                 <h4 class="top-buffer profile-title">{{pet.firstName}} {{pet.lastName}}</h4>
             </div>
             <div class="row mt-2">
-                <p class="text-answers"><span class="text-span">Age </span> {{pet.age}}</p>
-                <p class="text-answers"><span class="text-span">Species </span> {{pet.species}}</p>
-                <p class="text-answers"><span class="text-span">Weight </span>{{pet.weight}} lbs</p>
+                <p class="text-answers"><span class="text-span">Age: </span> {{pet.age}}</p>
+                <p class="text-answers"><span class="text-span">Species: </span> {{pet.species}}</p>
+                <p class="text-answers"><span class="text-span">Weight: </span>{{pet.weight}} lbs</p>
                 <p class="text-answers"><span class="text-span">Neutered? </span>{{pet.neutered}}</p>
-                <p class="text-answers"><span class="text-span">Vaccination needed? </span>{{pet.vaccinationNeeded}}</p>
+                <p class="text-answers"><span class="text-span">Vaccination Needed? </span>{{pet.vaccinationNeeded}}</p>
                 <p class="text-span">Owner <span class="text-answers">{{pet.owner.firstName}} {{pet.owner.lastName}}
                         </pet></span></p>
                 <p id="pet-id" class="hidden">{{pet.id}}</p>
@@ -34,19 +34,19 @@
                                 <h4 class="card-title text-center mb-2">New Pet Form</h4>
 
                                 <label for='pet_firstname'>First Name:</label>
-                                <textarea id='firstName' name='firstName' rows='2' cols='30'>{{firstName}}</textarea>
+                                <textarea class="form-input" id='firstName' name='firstName' rows='2' cols='30'>{{firstName}}</textarea>
                                 <br />
                                 <label for='pet_lastname'>Last Name:</label>
-                                <textarea id='lastName' name='lastName' rows='2' cols='30'>{{lastName}}</textarea>
+                                <textarea class="form-input" id='lastName' name='lastName' rows='2' cols='30'>{{lastName}}</textarea>
                                 <br />
                                 <label for='age'>Age:</label>
-                                <textarea id='age' name='age' rows='2' cols='30'>{{age}}</textarea>
+                                <textarea class="form-input" id='age' name='age' rows='2' cols='30'>{{age}}</textarea>
                                 <br />
                                 <label for='species'>Species:</label>
-                                <textarea id='species' name='species' rows='2' cols='30'>{{species}}</textarea>
+                                <textarea class="form-input" id='species' name='species' rows='2' cols='30'>{{species}}</textarea>
                                 <br />
                                 <label for='weight'>Weight:</label>
-                                <textarea id='weight' name='weight' rows='2' cols='30'>{{weight}}</textarea>
+                                <textarea class="form-input" id='weight' name='weight' rows='2' cols='30'>{{weight}}</textarea>
                                 <br />
                                 <input type='checkbox' id='neutered' name='neutered' />
                                 <label for='neutered'>Check box if pet is neutered.</label>
@@ -55,11 +55,11 @@
                                 <label for='vaccination'>Check box if pet needs vaccinations.</label>
                                 <br />
                                 <label for='pet_ownerid'>Owner ID:</label>
-                                <textarea id='pet_ownerid' name='pet_ownerid' rows='2' cols='30'>{{owner_id}}</textarea>
+                                <textarea class="form-input" id='pet_ownerid' name='pet_ownerid' rows='2' cols='30'>{{owner_id}}</textarea>
                                 <br />
                                 <div class="row">
                                         <div class="col text-center">
-                                                <button type='submit' value='Submit' class="p-2">Submit</button>
+                                                <button class="form-submit-btn" type='submit' value='Submit' class="p-2">Submit</button>
                                         </div>
                                 </div>
                         </form>
