@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "DM Sans";
+    font-family: "Roboto";
 
 }
 
@@ -35,6 +35,87 @@
     color: white;
 }
 
+#create-owner-button{
+    background-color:rgb(240, 154, 16);
+    color: white;
+    border: none;
+    margin-top: 20px;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
+}
+
+#create-owner-button:hover {
+    background-color:  rgb(255, 183, 0);
+    color: white;
+}
+
+#delete-pet-button{
+    background-color:rgb(224, 63, 63);
+    color: white;
+    border: none;
+    margin-top: 20px;
+    width: 165px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
+}
+
+#delete-pet-button:hover {
+    background-color:rgb(235, 88, 88);
+    color: white;
+}
+
+#update-pet-button{
+    background-color:rgb(56, 56, 56);
+    color: white;
+    border: none;
+    margin-top: 20px;
+    width: 165px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
+}
+
+#update-pet-button:hover {
+    background-color:  rgb(81, 81, 81);
+    color: white;
+}
+
+#delete-owner-button{
+    background-color:rgb(224, 63, 63);
+    color: white;
+    border: none;
+    margin-top: 20px;
+    width: 165px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
+}
+
+#delete-owner-button:hover {
+    background-color:rgb(235, 88, 88);
+    color: white;
+}
+
+#update-owner-button{
+    background-color:rgb(56, 56, 56);
+    color: white;
+    border: none;
+    margin-top: 20px;
+    width: 175px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
+}
+
+#update-owner-button:hover {
+    background-color:  rgb(81, 81, 81);
+    color: white;
+}
+
+
 .login-card-body{
 width: 395px;
 height: 450px;
@@ -54,6 +135,7 @@ margin-top: 85px;
 .login-text{
     margin-left: 15px;
     padding: -5px;
+    font-family: "Roboto";
 }
 
 .login-input{
@@ -90,6 +172,7 @@ margin-top: 85px;
 .card-body-div{
 padding: 18px;
 }
+
 .navbar-text {
    color: white;
     padding: 20px;
@@ -215,7 +298,6 @@ h1 {
     background-color:  rgb(255, 183, 0);
 }
 
-
 .card-text{
     margin-bottom: 2px;
 }
@@ -269,13 +351,13 @@ h1 {
 .add-newowner-card{
     display: inline-block;
     justify-content: center;
-    margin-left: 45px;
     padding: 10px;
     border: none;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
     height: auto;
     background-color: #A3A3A3;
+    margin-bottom: 50px;
 }
 
 .add-newpet-card{
@@ -287,7 +369,8 @@ h1 {
     box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
     height: auto;
     background-color: #A3A3A3;
-    width: 270px;
+    width: 275px;
+    margin-bottom: 50px;
 }
 
 .form-input{
@@ -304,3 +387,97 @@ h1 {
     width: 100px;
     height: 40px;
 }
+
+.form-submit-btn:hover {
+    background-color:  rgb(255, 183, 0);
+}
+
+
+.text-answers{
+    color: black;
+}
+
+.profile-title{
+    background: -webkit-linear-gradient(rgb(255, 181, 44), rgb(231, 116, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 65px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 715px) {
+
+    .login-imgg{
+       width: 425px;
+    }
+
+    .login-card-body{
+        width: 325px;
+        height: 375px;
+    }
+
+    .login-input{
+        width: 265px ;
+    }
+
+} 
+
+@media (max-width: 425px) {
+
+    .login-imgg{
+       width: 300px;
+    }
+
+    .login-input{
+        width: 300px ;
+    }
+
+} 
+
+@media (max-width: 425px) {
+
+    .login-imgg{
+       width: 300px;
+    }
+
+    .login-input{
+        width: 265px ;
+    }
+
+} 
+
+@media (max-width: 1288px) {
+
+    .navbar-text{
+      margin-left: 30px;
+    }
+
+} 
+
+@media (max-width: 1138px) {
+
+    .navbar-text{
+      margin-left: 5px;
+    }
+
+} 
+
+@media (max-width: 1062px) {
+
+    .search-input{
+     width: 280px;
+    }
+
+} 
+@media (max-width: 991px) {
+
+    .header{
+     height: 300px;
+    }
+.nav-logo{
+    display: grid;
+    justify-content: center;
+
+}
+} 

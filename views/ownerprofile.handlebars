@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center" style="background-color: #8a8a8a">
+<div class="d-flex justify-content-center" style="background-color: #ffffff">
     <div>
         <img src="/images/owner-profile-placeholder.jpg" alt="Card image cap" class="profile-placeholder-img mb-5">
     </div>
@@ -8,11 +8,11 @@
                 <h4 class="top-buffer profile-title">{{owner.firstName}} {{owner.lastName}}</h4>
             </div>
             <div class="row mt-2">
-                <p class="text-answers"><span class="text-span">ID Number </span> {{owner.id}}</p>
-                <p class="text-answers"><span class="text-span">Age </span> {{owner.age}}</p>
-                <p class="text-answers"><span class="text-span">Contact Number </span> {{owner.phoneNumber}}</p>
+                <p class="text-answers"><span class="text-span">ID Number: </span> {{owner.id}}</p>
+                <p class="text-answers"><span class="text-span">Age: </span> {{owner.age}}</p>
+                <p class="text-answers"><span class="text-span">Contact Number: </span> {{owner.phoneNumber}}</p>
                 <div>
-                    <p class="text-answers"><span class="text-span">Home Address </span>{{owner.homeAddress}}</p>
+                    <p class="text-answers"><span class="text-span">Home Address: </span>{{owner.homeAddress}}</p>
                 </div>
             </div>
             <div>
@@ -37,23 +37,23 @@
                 <form id="update-user-form">
                         <h4 class="card-title text-center mb-2">Update Owner Form</h4>
                         <label for='owner_firstname'>First Name:</label>
-                        <textarea id='firstName' name='firstName' rows='2' cols='30'>{{firstName}}</textarea>
+                        <textarea class="form-input" id='firstName' name='firstName' rows='2' cols='30'>{{firstName}}</textarea>
                         <br />
                         <label for='owner_lastname'>Last Name:</label>
-                        <textarea id='lastName' name='lastName' rows='2' cols='30'>{{lastName}}</textarea>
+                        <textarea class="form-input" id='lastName' name='lastName' rows='2' cols='30'>{{lastName}}</textarea>
                         <br />
                         <label for='age'>Age:</label>
-                        <textarea id='age' name='age' rows='2' cols='30'>{{age}}</textarea>
+                        <textarea class="form-input" id='age' name='age' rows='2' cols='30'>{{age}}</textarea>
                         <br />
                         <label for='phoneNumber'>Phone Number:</label>
-                        <textarea id='phoneNumber' name='phoneNumber' rows='2' cols='30'>{{phoneNumber}}</textarea>
+                        <textarea class="form-input" id='phoneNumber' name='phoneNumber' rows='2' cols='30'>{{phoneNumber}}</textarea>
                         <br />
                         <label for='homeAddress'>Home Address:</label>
-                        <textarea id='homeAddress' name='homeAddress' rows='2' cols='30'>{{homeAddress}}</textarea>
+                        <textarea class="form-input" id='homeAddress' name='homeAddress' rows='2' cols='30'>{{homeAddress}}</textarea>
                         <br />
                         <div class="row">
                                 <div class="col text-center">
-                                        <button type='submit' value='Submit' class="p-2">Submit</button>
+                                        <button class="form-submit-btn" type='submit' value='Submit' class="p-2">Submit</button>
                                 </div>
                         </div>
                 </form>

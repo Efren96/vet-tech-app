@@ -4,7 +4,7 @@
 
 <div class="row mt-4">
         <div class="col text-center">
-                <button id="create-pet-button" type="button" class="p-2">Create New Owner Profile</button>
+                <button id="create-owner-button" type="button" class="p-2">Create New Owner Profile</button>
         </div>
 </div>
 
@@ -14,23 +14,23 @@
                 <form id="add-user-form">
                         <h4 class="card-title text-center mb-2">New Owner Form</h4>
                         <label for='owner_firstname'>First Name:</label>
-                        <textarea id='firstName' name='firstName' rows='2' cols='30'>{{firstName}}</textarea>
+                        <textarea class="form-input" id='firstName' name='firstName' rows='2' cols='30'>{{firstName}}</textarea>
                         <br />
                         <label for='owner_lastname'>Last Name:</label>
-                        <textarea id='lastName' name='lastName' rows='2' cols='30'>{{lastName}}</textarea>
+                        <textarea class="form-input" id='lastName' name='lastName' rows='2' cols='30'>{{lastName}}</textarea>
                         <br />
                         <label for='age'>Age:</label>
-                        <textarea id='age' name='age' rows='2' cols='30'>{{age}}</textarea>
+                        <textarea class="form-input" id='age' name='age' rows='2' cols='30'>{{age}}</textarea>
                         <br />
                         <label for='phoneNumber'>Phone Number:</label>
-                        <textarea id='phoneNumber' name='phoneNumber' rows='2' cols='30'>{{phoneNumber}}</textarea>
+                        <textarea class="form-input" id='phoneNumber' name='phoneNumber' rows='2' cols='30'>{{phoneNumber}}</textarea>
                         <br />
                         <label for='homeAddress'>Home Address:</label>
-                        <textarea id='homeAddress' name='homeAddress' rows='2' cols='30'>{{homeAddress}}</textarea>
+                        <textarea class="form-input" id='homeAddress' name='homeAddress' rows='2' cols='30'>{{homeAddress}}</textarea>
                         <br />
                         <div class="row">
                                 <div class="col text-center">
-                                        <button type='submit' value='Submit' class="p-2">Submit</button>
+                                        <button class="form-submit-btn" type='submit' value='Submit' class="p-2">Submit</button>
                                 </div>
                         </div>
                 </form>
