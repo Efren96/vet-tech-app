@@ -65,11 +65,11 @@ router.post('/', (req, res) => {
 // updates owner
 router.put('/:id', (req, res) => {
     Owner.update({
-        fisrtName: req.body.fisrtName,
-        lastName: req.body.lastName,
+        fisrtName: req.body.owner_firstName,
+        lastName: req.body.owner_lastName,
         age: req.body.age,
-        phoneNumber: req.body.phoneNumber,
-        homeAddress: req.body.homeAddress,
+        phoneNumber: req.body.phone_number,
+        homeAddress: req.body.home_address,
     }, {
         where: {
             id: req.params.id
