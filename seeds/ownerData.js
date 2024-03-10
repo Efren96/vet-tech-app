@@ -20,6 +20,7 @@ for (let i = 0; i < totalOwners; i++) {
   ownerdata.push(newOwner);
 }
 
+
 const seedOwners = () => Owner.bulkCreate(ownerdata);
 
 module.exports = seedOwners;
