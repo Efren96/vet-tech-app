@@ -1,3 +1,4 @@
+const createOwnerButton = document.getElementById("create-owner-button");
 const newOwnerForm = document.getElementById("add-user-form");
 
 const newOwner = async (event) => {
@@ -30,5 +31,9 @@ const newOwner = async (event) => {
         alert('Failed to add owner');
     }
 };
+
+createOwnerButton.addEventListener("click", function() {
+    document.querySelector(".add-newowner-card").classList.remove("d-none");
+});
 
 newOwnerForm.addEventListener('submit', newOwner);
