@@ -31,5 +31,35 @@
     </div>
 </div>
 
+<div class="col d-flex justify-content-center mt-3">
+<div class="add-newowner-card d-none" style="width: 18rem;">
+        <div id="card-text-body" class="owner-card-body">
+                <form id="update-user-form">
+                        <h4 class="card-title text-center mb-2">Update Owner Form</h4>
+                        <label for='owner_firstname'>First Name:</label>
+                        <textarea id='firstName' name='firstName' rows='2' cols='30'>{{firstName}}</textarea>
+                        <br />
+                        <label for='owner_lastname'>Last Name:</label>
+                        <textarea id='lastName' name='lastName' rows='2' cols='30'>{{lastName}}</textarea>
+                        <br />
+                        <label for='age'>Age:</label>
+                        <textarea id='age' name='age' rows='2' cols='30'>{{age}}</textarea>
+                        <br />
+                        <label for='phoneNumber'>Phone Number:</label>
+                        <textarea id='phoneNumber' name='phoneNumber' rows='2' cols='30'>{{phoneNumber}}</textarea>
+                        <br />
+                        <label for='homeAddress'>Home Address:</label>
+                        <textarea id='homeAddress' name='homeAddress' rows='2' cols='30'>{{homeAddress}}</textarea>
+                        <br />
+                        <div class="row">
+                                <div class="col text-center">
+                                        <button type='submit' value='Submit' class="p-2">Submit</button>
+                                </div>
+                        </div>
+                </form>
+        </div>
+</div>
+</div>
+
 
 <script src="/js/ownerprofile.js"></script>
