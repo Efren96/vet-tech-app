@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const { Owner, Pet } = require('../../models');
 const sequelize = require('../../config/connection');
+const { withAuth, isAuthenticated } = require("../../utils/auth");
 
 // gets all owners
-router.get('/', (req, res) => {
+router.get('/', withAuth, isAuthenticated, (req, res) => {
     Owner.findAll({
         attributes: [
             'id',
@@ -22,7 +23,7 @@ router.get('/', (req, res) => {
 });
 
 // gets owner by id
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, isAuthenticated, async (req, res) => {
     try {
         const dbOwnerData = await Owner.findByPk(req.params.id, {
             include: [
@@ -47,7 +48,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // creates owner
-router.post('/', (req, res) => {
+router.post('/', withAuth, isAuthenticated, (req, res) => {
     Owner.create({
         firstName: req.body.owner_firstName,
         lastName: req.body.owner_lastName,
@@ -63,7 +64,7 @@ router.post('/', (req, res) => {
 });
 
 // updates owner
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, isAuthenticated, (req, res) => {
     Owner.update({
         fisrtName: req.body.owner_firstName,
         lastName: req.body.owner_lastName,
@@ -88,7 +89,7 @@ router.put('/:id', (req, res) => {
 });
 
 // deletes owner
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, isAuthenticated, (req, res) => {
     Owner.destroy({
         where: {
             id: req.params.id
