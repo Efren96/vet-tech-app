@@ -19,7 +19,61 @@
     margin-left: 20px;
 }
 
+.login-card-body{
+width: 395px;
+height: 450px;
+background-color: rgb(107, 107, 107);
+border: none;
+border-radius: 20px;
+box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
+justify-content: center;
+margin-top: 85px;
+}
 
+.welcome-title{
+    font-size: 50px;
+    font-family: "Crimson Text";
+}
+
+.login-text{
+    margin-left: 15px;
+    padding: -5px;
+}
+
+.login-input{
+    border: none;
+    margin: 5px;
+    width: 325px;
+    height: 50px;
+}
+
+.login-btn{
+    background-color:rgb(240, 154, 16);
+    color: white;
+    border: none;
+    margin-left: 5px;
+    width: 90px;
+}
+
+.login-btn:hover {
+    background-color:  rgb(255, 183, 0);
+    color: white;
+}
+
+.login-imgg{
+    width: 545px;
+    justify-content: center;
+    margin-top: 105px;
+}
+
+.login-img-div{
+    display: grid;
+    justify-content: center;
+}
+
+.card-body-div{
+padding: 18px;
+}
 .navbar-text {
    color: white;
     padding: 20px;
