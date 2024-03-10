@@ -1,6 +1,6 @@
 # Vet-Tech-App
 
-https://vet-tech-62e0cbe50345.herokuapp.com/
+https://vet-tech-app-57f56dec96cd.herokuapp.com/
 
 ## Description
 
@@ -37,4 +37,4 @@ Please refer to the LICENSE in the repo.
 
 ## Screenshot of Website
 
-![Alt text](./assets/images/Screenshot%202024-02-26%20215318.png)
+![Alt text](./public/images/Site-Login.png)
