@@ -1,5 +1,18 @@
 const { Pet } = require('../models');
 
+const { faker } = require('@faker-js/faker');
+// faker.seed(1);
+
+const randomLastName = faker.person.lastName();
+
+const randomAge = faker.number.int({ min: 1, max: 10 });
+const randomDogWeight = faker.number.int({ min: 10, max: 120 });
+const randomCatWeight = faker.number.int({ min: 5, max: 20 });
+
+const randomBool = faker.datatype.boolean();
+const randomOwner = faker.number.int({ min: 1, max: 10 });
+
+
 const petdata = [
   {
     firstName: "Fergus",
@@ -40,6 +53,66 @@ const petdata = [
     neutered: false,
     vaccinationNeeded: false,
     owner_id: 3
+  },
+  {
+    firstName: "Rex",
+    lastName: randomLastName,
+    age: randomAge,
+    species: "Dog",
+    weight: randomDogWeight,
+    neutered: randomBool,
+    vaccinationNeeded: randomBool,
+    owner_id: randomOwner
+  },
+  {
+    firstName: "Pickles",
+    lastName: randomLastName,
+    age: randomAge,
+    species: "Cat",
+    weight: randomCatWeight,
+    neutered: randomBool,
+    vaccinationNeeded: randomBool,
+    owner_id: randomOwner
+  },
+  {
+    firstName: "Rover",
+    lastName: randomLastName,
+    age: randomAge,
+    species: "Dog",
+    weight: randomDogWeight,
+    neutered: randomBool,
+    vaccinationNeeded: randomBool,
+    owner_id: randomOwner
+  },
+  {
+    firstName: "Bunyon",
+    lastName: randomLastName,
+    age: randomAge,
+    species: "Cat",
+    weight: randomCatWeight,
+    neutered: randomBool,
+    vaccinationNeeded: randomBool,
+    owner_id: randomOwner
+  },
+  {
+    firstName: "Rosie",
+    lastName: randomLastName,
+    age: randomAge,
+    species: "Dog",
+    weight: randomDogWeight,
+    neutered: randomBool,
+    vaccinationNeeded: randomBool,
+    owner_id: randomOwner
+  },
+  {
+    firstName: "Shadow",
+    lastName: randomLastName,
+    age: randomAge,
+    species: "Cat",
+    weight: randomCatWeight,
+    neutered: randomBool,
+    vaccinationNeeded: randomBool,
+    owner_id: randomOwner
   },
 ];
 

@@ -54,7 +54,6 @@ router.post('/', (req, res) => {
         age: req.body.age,
         phoneNumber: req.body.phone_number,
         homeAddress: req.body.home_address,
-        // pet_id: req.session.pet_id, how do we do this part?
     })
         .then(dbOwnerData => res.json(dbOwnerData))
         .catch(err => {
@@ -66,12 +65,11 @@ router.post('/', (req, res) => {
 // updates owner
 router.put('/:id', (req, res) => {
     Owner.update({
-        fisrtName: req.body.fisrtNameame,
+        fisrtName: req.body.fisrtName,
         lastName: req.body.lastName,
         age: req.body.age,
         phoneNumber: req.body.phoneNumber,
         homeAddress: req.body.homeAddress,
-        pet_id: req.session.pet_id,
     }, {
         where: {
             id: req.params.id
