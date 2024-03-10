@@ -9,10 +9,12 @@
     <title>VetTech</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Namdhinggo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-{{!-- <body style="background-color: rgb(76,72,72);"> --}}
     <!--header-->
     {{#if loggedIn}}
     <header class="header">
@@ -30,7 +32,7 @@
     </header>
     {{/if}}
 
-    <div>
+    <div class="card-section-div">
         {{!-- renders contents of sub layout --}}
         {{{ body }}}
     </div>
@@ -39,6 +41,7 @@
     <script src="/js/logout.js"></script>
     {{/if}}
     <script src="/js/bootstrap.js"></script>
+     <script src="/js/search-input.js"></script>
 </body>
 
 </html>
