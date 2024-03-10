@@ -1,89 +1,24 @@
 const { Owner } = require('../models');
 
-
 const { faker } = require('@faker-js/faker');
-// faker.seed(1);
 
-const randomName = faker.person.firstName();
-const randomLastName = faker.person.lastName();
+// Initialize an empty array to store the objects
+const ownerdata = [];
 
-const randomAge = faker.number.int({ min: 18, max: 80 });
+// Define the number of objects you want to create
+const totalOwners = 20; // Change this to the desired number of objects
 
-const randomPhone = faker.phone.number();
-const randomAddress = faker.location.streetAddress();
-
-const ownerdata = [
-  {
-    firstName: "Derek",
-    lastName: "Medrano",
-    age: 25,
-    phoneNumber: "(1) 555-123-4567",
-    homeAddress: "123 Peekaboo St.",
-  },
-  {
-    firstName: "Sara",
-    lastName: "Fuller",
-    age: 28,
-    phoneNumber: "(1) 963-852-7410",
-    homeAddress: "456 Happy Rainbows Ave.",
-  },
-  {
-    firstName: "Efren",
-    lastName: "Leal",
-    age: 28,
-    phoneNumber: "(1) 281-330-8004",
-    homeAddress: "420 Elm St.",
-  },
-  {
-    firstName: randomName,
-    lastName: randomLastName,
-    age: randomAge,
-    phoneNumber: randomPhone,
-    homeAddress: randomAddress,
-  },
-  {
-    firstName: randomName,
-    lastName: randomLastName,
-    age: randomAge,
-    phoneNumber: randomPhone,
-    homeAddress: randomAddress,
-  },
-  {
-    firstName: randomName,
-    lastName: randomLastName,
-    age: randomAge,
-    phoneNumber: randomPhone,
-    homeAddress: randomAddress,
-  },
-  {
-    firstName: randomName,
-    lastName: randomLastName,
-    age: randomAge,
-    phoneNumber: randomPhone,
-    homeAddress: randomAddress,
-  },
-  {
-    firstName: randomName,
-    lastName: randomLastName,
-    age: randomAge,
-    phoneNumber: randomPhone,
-    homeAddress: randomAddress,
-  },
-  {
-    firstName: randomName,
-    lastName: randomLastName,
-    age: randomAge,
-    phoneNumber: randomPhone,
-    homeAddress: randomAddress,
-  },
-  {
-    firstName: randomName,
-    lastName: randomLastName,
-    age: randomAge,
-    phoneNumber: randomPhone,
-    homeAddress: randomAddress,
-  },
-];
+// Create the objects and add them to the array
+for (let i = 0; i < totalOwners; i++) {
+  const newOwner = {
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
+    age: faker.number.int({ min: 18, max: 80 }),
+    phoneNumber: faker.phone.number(),
+    homeAddress: faker.location.streetAddress(),
+  };
+  ownerdata.push(newOwner);
+}
 
 const seedOwners = () => Owner.bulkCreate(ownerdata);
 
