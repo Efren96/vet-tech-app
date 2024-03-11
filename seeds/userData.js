@@ -1,10 +1,10 @@
-const { User } = require("../models");
+const { User } = require('../models');
 
 const userdata = [
   {
-    name: "User",
-    email: "user@vettech.com",
-    password: "BarkMeow123"
+    name: 'User',
+    email: 'user@vettech.com',
+    password: 'BarkMeow123'
   }
 ];
 

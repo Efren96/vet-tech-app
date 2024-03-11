@@ -1,22 +1,21 @@
 const { Pet } = require('../models');
-
 const { faker } = require('@faker-js/faker');
 // faker.seed(1);
 
-// Initialize an empty array to store the objects
+// initialize an empty array to store the objects
 const petdata = [];
 
-// Define the number of objects you want to create
+// define the number of objects you want to create
 const totalCats = 20; // Change this to the desired number of objects
 const totalDogs = 20; // Change this to the desired number of objects
 
-// Create the objects and add them to the array
+// create the objects and add them to the array
 for (let i = 0; i < totalDogs; i++) {
   const newDog = {
     firstName: faker.person.firstName(),
     lastName: faker.person.lastName(),
     age: faker.number.int({ min: 1, max: 10 }),
-    species: "Dog",
+    species: 'Dog',
     weight: faker.number.int({ min: 10, max: 120 }),
     neutered: faker.datatype.boolean(),
     vaccinationNeeded: faker.datatype.boolean(),
@@ -30,7 +29,7 @@ for (let i = 0; i < totalCats; i++) {
     firstName: faker.person.firstName(),
     lastName: faker.person.lastName(),
     age: faker.number.int({ min: 1, max: 10 }),
-    species: "Cat",
+    species: 'Cat',
     weight: faker.number.int({ min: 5, max: 20 }),
     neutered: faker.datatype.boolean(),
     vaccinationNeeded: faker.datatype.boolean(),

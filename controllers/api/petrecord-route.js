@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { Pet, Owner } = require('../../models');
-const sequelize = require('../../config/connection');
 const { withAuth, isAuthenticated } = require("../../utils/auth");
 
 // gets all pets
@@ -14,10 +13,10 @@ router.get('/', withAuth, isAuthenticated, (req, res) => {
             'species'
         ],
     })
-    .then(dbPetData => {
-        const pets = dbPetData.map((pet) => pet.get({ plain: true }));
-        res.render("petdashboard", { pets, loggedIn: true });
-    })
+        .then(dbPetData => {
+            const pets = dbPetData.map((pet) => pet.get({ plain: true }));
+            res.render("petdashboard", { pets, loggedIn: true });
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -27,27 +26,27 @@ router.get('/', withAuth, isAuthenticated, (req, res) => {
 // gets pets by id
 router.get('/:id', withAuth, isAuthenticated, async (req, res) => {
     try {
-      const dbPetData = await Pet.findByPk(req.params.id, {
-        include: [
-          {
-            model: Owner,
-            attributes: [
-              'id',
-              "firstName",
-              "lastName"
+        const dbPetData = await Pet.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Owner,
+                    attributes: [
+                        'id',
+                        "firstName",
+                        "lastName"
+                    ],
+                },
             ],
-          },
-        ],
-      });
-  
-      const pet = dbPetData.get({ plain: true });
-      console.log(pet);
-      res.render('petprofile', { pet, loggedIn: true });
+        });
+
+        const pet = dbPetData.get({ plain: true });
+        console.log(pet);
+        res.render('petprofile', { pet, loggedIn: true });
     } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
+        console.log(err);
+        res.status(500).json(err);
     }
-  });
+});
 
 // creates pet
 router.post('/', withAuth, isAuthenticated, (req, res) => {

@@ -2,6 +2,7 @@ const Pet = require('./petProfile');
 const Owner = require('./ownerProfile');
 const User = require("./User")
 
+// creates relationships between models
 Owner.hasMany(Pet, {
     foreignKey: "owner_id",
     onDelete: "cascade",
@@ -13,5 +14,3 @@ Pet.belongsTo(Owner, {
 });
 
 module.exports = { Pet, Owner, User };
-
-// find one owner include pet

@@ -1,9 +1,10 @@
+// logic to create a new owner on dashboard page
 const createOwnerButton = document.getElementById("create-owner-button");
 const newOwnerForm = document.getElementById("add-user-form");
 
 const newOwner = async (event) => {
     event.stopPropagation();
-    event.preventDefault(); 
+    event.preventDefault();
 
     const owner_firstName = document.querySelector('#firstName').value;
     const owner_lastName = document.querySelector('#lastName').value;
@@ -32,7 +33,7 @@ const newOwner = async (event) => {
     }
 };
 
-createOwnerButton.addEventListener("click", function() {
+createOwnerButton.addEventListener("click", function () {
     document.querySelector(".add-newowner-card").classList.remove("d-none");
 });
 
