@@ -16,10 +16,10 @@ const deletePet = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace("/api/petdashboard");
-            alert("Pet deleted!")
+            document.location.replace('/api/petdashboard');
+            alert('Pet deleted!')
         } else {
-            alert("Deletion failed.")
+            alert('Deletion failed.')
         }
     } catch (err) {
         console.error(err)
@@ -38,11 +38,11 @@ const updatePet = async (event) => {
     const weight = document.querySelector('#weight').value;
     const neutered = document.querySelector("#neutered");
     const isNeutered = neutered.checked;
-    const vaccines = document.querySelector("#vaccination");
+    const vaccines = document.querySelector('#vaccination');
     const needsVaccines = vaccines.checked;
-    const owner_id = document.querySelector("#pet_ownerid").value;
+    const owner_id = document.querySelector('#pet_ownerid').value;
 
-    const pet_id = document.querySelector("#pet-id").textContent;
+    const pet_id = document.querySelector('#pet-id').textContent;
     console.log(pet_id);
 
     const response = await fetch(`/api/petdashboard/${pet_id}`, {
@@ -63,15 +63,15 @@ const updatePet = async (event) => {
     });
     if (response.ok) {
         document.location.reload();
-        alert("Pet updated!")
+        alert('Pet updated!')
     } else {
         alert('Failed to update pet');
     }
 };
 
-updatePetButton.addEventListener("click", function () {
+updatePetButton.addEventListener('click', function () {
     document.querySelector(".add-newpet-card").classList.remove("d-none");
 });
 
 updatePetForm.addEventListener('submit', updatePet);
-deletePetButtonEl.addEventListener("click", deletePet);
+deletePetButtonEl.addEventListener('click', deletePet);

@@ -11,11 +11,11 @@ const newPet = async (event) => {
     const age = document.querySelector('#age').value;
     const species = document.querySelector('#species').value;
     const weight = document.querySelector('#weight').value;
-    const neutered = document.querySelector("#neutered");
+    const neutered = document.querySelector('#neutered');
     const isNeutered = neutered.checked;
-    const vaccines = document.querySelector("#vaccination");
+    const vaccines = document.querySelector('#vaccination');
     const needsVaccines = vaccines.checked;
-    const owner_id = document.querySelector("#pet_ownerid").value;
+    const owner_id = document.querySelector('#pet_ownerid').value;
 
     const response = await fetch(`/api/petdashboard`, {
         method: 'POST',
@@ -35,13 +35,13 @@ const newPet = async (event) => {
     });
     if (response.ok) {
         document.location.replace("/api/petdashboard");
-        alert("Pet added!")
+        alert('Pet added!')
     } else {
         alert('Failed to add pet');
     }
 };
 
-createPetButton.addEventListener("click", function () {
+createPetButton.addEventListener('click', function () {
     document.querySelector(".add-newpet-card").classList.remove("d-none");
 });
 

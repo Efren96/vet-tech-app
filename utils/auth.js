@@ -18,6 +18,6 @@ const isAuthenticated = (req, res, next) => {
     // user is not authenticated, redirect to the login page
     res.redirect('/login');
   }
-}
+};
 
 module.exports = { withAuth, isAuthenticated };
