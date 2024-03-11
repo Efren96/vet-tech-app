@@ -1,8 +1,11 @@
 const deleteOwnerButtonEl = document.getElementById("delete-owner-button");
+const updateOwnerButton = document.getElementById("update-owner-button");
+const updateOwnerForm = document.getElementById("update-user-form");
 
+// logic to delete owner on profile page
 const deleteOwner = async (event) => {
-   event.stopPropagation();
-    event.preventDefault(); 
+    event.stopPropagation();
+    event.preventDefault();
 
     const owner_id = document.querySelector("#owner-id").textContent;
     console.log(owner_id);
@@ -24,12 +27,10 @@ const deleteOwner = async (event) => {
     }
 };
 
-const updateOwnerButton = document.getElementById("update-owner-button");
-const updateOwnerForm = document.getElementById("update-user-form");
-
+// logic to update owner on profile page
 const updateOwner = async (event) => {
     event.stopPropagation();
-    event.preventDefault(); 
+    event.preventDefault();
 
     const owner_firstName = document.querySelector('#firstName').value;
     const owner_lastName = document.querySelector('#lastName').value;
@@ -61,10 +62,9 @@ const updateOwner = async (event) => {
     }
 };
 
-updateOwnerButton.addEventListener("click", function() {
+updateOwnerButton.addEventListener("click", function () {
     document.querySelector(".add-newowner-card").classList.remove("d-none");
 });
 
 updateOwnerForm.addEventListener('submit', updateOwner);
-
 deleteOwnerButtonEl.addEventListener("click", deleteOwner);

@@ -1,14 +1,13 @@
 const { Owner } = require('../models');
-
 const { faker } = require('@faker-js/faker');
 
-// Initialize an empty array to store the objects
+// initialize an empty array to store the objects
 const ownerdata = [];
 
-// Define the number of objects you want to create
-const totalOwners = 20; // Change this to the desired number of objects
+// define the number of objects you want to create
+const totalOwners = 20; // change this to the desired number of objects
 
-// Create the objects and add them to the array
+// create the objects and add them to the array
 for (let i = 0; i < totalOwners; i++) {
   const newOwner = {
     firstName: faker.person.firstName(),
@@ -19,7 +18,6 @@ for (let i = 0; i < totalOwners; i++) {
   };
   ownerdata.push(newOwner);
 }
-
 
 const seedOwners = () => Owner.bulkCreate(ownerdata);
 

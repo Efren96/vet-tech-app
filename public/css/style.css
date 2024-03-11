@@ -19,8 +19,8 @@
     margin-left: 20px;
 }
 
-#create-pet-button{
-    background-color:rgb(240, 154, 16);
+#create-pet-button {
+    background-color: rgb(240, 154, 16);
     color: white;
     border: none;
     margin-top: 20px;
@@ -31,12 +31,12 @@
 }
 
 #create-pet-button:hover {
-    background-color:  rgb(255, 183, 0);
+    background-color: rgb(255, 183, 0);
     color: white;
 }
 
-#create-owner-button{
-    background-color:rgb(240, 154, 16);
+#create-owner-button {
+    background-color: rgb(240, 154, 16);
     color: white;
     border: none;
     margin-top: 20px;
@@ -47,12 +47,12 @@
 }
 
 #create-owner-button:hover {
-    background-color:  rgb(255, 183, 0);
+    background-color: rgb(255, 183, 0);
     color: white;
 }
 
-#delete-pet-button{
-    background-color:rgb(224, 63, 63);
+#delete-pet-button {
+    background-color: rgb(224, 63, 63);
     color: white;
     border: none;
     margin-top: 20px;
@@ -63,12 +63,12 @@
 }
 
 #delete-pet-button:hover {
-    background-color:rgb(235, 88, 88);
+    background-color: rgb(235, 88, 88);
     color: white;
 }
 
-#update-pet-button{
-    background-color:rgb(56, 56, 56);
+#update-pet-button {
+    background-color: rgb(56, 56, 56);
     color: white;
     border: none;
     margin-top: 20px;
@@ -79,12 +79,12 @@
 }
 
 #update-pet-button:hover {
-    background-color:  rgb(81, 81, 81);
+    background-color: rgb(81, 81, 81);
     color: white;
 }
 
-#delete-owner-button{
-    background-color:rgb(224, 63, 63);
+#delete-owner-button {
+    background-color: rgb(224, 63, 63);
     color: white;
     border: none;
     margin-top: 20px;
@@ -95,12 +95,12 @@
 }
 
 #delete-owner-button:hover {
-    background-color:rgb(235, 88, 88);
+    background-color: rgb(235, 88, 88);
     color: white;
 }
 
-#update-owner-button{
-    background-color:rgb(56, 56, 56);
+#update-owner-button {
+    background-color: rgb(56, 56, 56);
     color: white;
     border: none;
     margin-top: 20px;
@@ -111,42 +111,42 @@
 }
 
 #update-owner-button:hover {
-    background-color:  rgb(81, 81, 81);
+    background-color: rgb(81, 81, 81);
     color: white;
 }
 
 
-.login-card-body{
-width: 395px;
-height: 450px;
-background-color: rgb(107, 107, 107);
-border: none;
-border-radius: 20px;
-box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
-justify-content: center;
-margin-top: 85px;
+.login-card-body {
+    width: 395px;
+    height: 450px;
+    background-color: rgb(107, 107, 107);
+    border: none;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
+    justify-content: center;
+    margin-top: 85px;
 }
 
-.welcome-title{
+.welcome-title {
     font-size: 50px;
     font-family: "Crimson Text";
 }
 
-.login-text{
+.login-text {
     margin-left: 15px;
     padding: -5px;
     font-family: "Roboto";
 }
 
-.login-input{
+.login-input {
     border: none;
     margin: 5px;
     width: 325px;
     height: 50px;
 }
 
-.login-btn{
-    background-color:rgb(240, 154, 16);
+.login-btn {
+    background-color: rgb(240, 154, 16);
     color: white;
     border: none;
     margin-left: 5px;
@@ -154,27 +154,27 @@ margin-top: 85px;
 }
 
 .login-btn:hover {
-    background-color:  rgb(255, 183, 0);
+    background-color: rgb(255, 183, 0);
     color: white;
 }
 
-.login-imgg{
+.login-imgg {
     width: 545px;
     justify-content: center;
     margin-top: 105px;
 }
 
-.login-img-div{
+.login-img-div {
     display: grid;
     justify-content: center;
 }
 
-.card-body-div{
-padding: 18px;
+.card-body-div {
+    padding: 18px;
 }
 
 .navbar-text {
-   color: white;
+    color: white;
     padding: 20px;
     margin-left: 80px;
     font-size: 20px;
@@ -182,11 +182,11 @@ padding: 18px;
     text-decoration: none;
 }
 
-.nav-div{
+.nav-div {
     display: inline-flex;
 }
 
-.navbar-text:hover{
+.navbar-text:hover {
     color: rgb(241, 173, 44);
 }
 
@@ -244,10 +244,10 @@ h1 {
 
 /*styling for search button after you hover over it*/
 .search-button:hover {
-    background-color:  rgb(255, 183, 0);
+    background-color: rgb(255, 183, 0);
 }
 
-.pet-card{
+.pet-card {
     display: inline-block;
     margin-top: 125px;
     margin-left: 45px;
@@ -258,7 +258,7 @@ h1 {
     height: 370px;
 }
 
-.owner-card{
+.owner-card {
     display: inline-block;
     margin-top: 125px;
     margin-left: 45px;
@@ -268,22 +268,23 @@ h1 {
     box-shadow: rgba(0, 0, 0, 20%) 0px 7px 29px 0px;
     height: 386px;
 }
-.card-body{
+
+.card-body {
     width: 265px;
 }
 
-.owner-card-body{
+.owner-card-body {
     width: 259px;
 }
 
-.card-btn{
+.card-btn {
     float: right;
     background-color: rgb(240, 154, 16);
     border: none;
     margin-left: 120px;
 }
 
-.owner-card-btn{
+.owner-card-btn {
     float: right;
     background-color: rgb(240, 154, 16);
     border: none;
@@ -291,22 +292,23 @@ h1 {
 }
 
 .card-btn:hover {
-    background-color:  rgb(255, 183, 0);
+    background-color: rgb(255, 183, 0);
 }
 
 .owner-card-btn:hover {
-    background-color:  rgb(255, 183, 0);
+    background-color: rgb(255, 183, 0);
 }
 
-.card-text{
+.card-text {
     margin-bottom: 2px;
 }
-.card-middle-text{
+
+.card-middle-text {
     margin-bottom: -10px;
     display: inline-block;
 }
 
-.owner-card-middle-text{
+.owner-card-middle-text {
     margin-bottom: -35px;
     display: inline-block;
 }
@@ -319,7 +321,7 @@ h1 {
     display: none;
 }
 
-.top-buffer { 
+.top-buffer {
     margin-top: 130px
 }
 
@@ -336,7 +338,7 @@ h1 {
 .text-span {
     color: black;
     font-weight: bold;
-    }
+}
 
 .profile-title {
     color: orange;
@@ -348,7 +350,7 @@ h1 {
     height: 100%;
 }
 
-.add-newowner-card{
+.add-newowner-card {
     display: inline-block;
     justify-content: center;
     padding: 10px;
@@ -360,7 +362,7 @@ h1 {
     margin-bottom: 50px;
 }
 
-.add-newpet-card{
+.add-newpet-card {
     display: inline-block;
     justify-content: center;
     padding: 10px;
@@ -373,12 +375,12 @@ h1 {
     margin-bottom: 50px;
 }
 
-.form-input{
+.form-input {
     border: none;
     border-radius: 8px;
 }
 
-.form-submit-btn{
+.form-submit-btn {
     background-color: rgb(240, 154, 16);
     border: none;
     color: white;
@@ -389,15 +391,15 @@ h1 {
 }
 
 .form-submit-btn:hover {
-    background-color:  rgb(255, 183, 0);
+    background-color: rgb(255, 183, 0);
 }
 
 
-.text-answers{
+.text-answers {
     color: black;
 }
 
-.profile-title{
+.profile-title {
     background: -webkit-linear-gradient(rgb(255, 181, 44), rgb(231, 116, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -408,76 +410,78 @@ h1 {
 
 @media (max-width: 715px) {
 
-    .login-imgg{
-       width: 425px;
+    .login-imgg {
+        width: 425px;
     }
 
-    .login-card-body{
+    .login-card-body {
         width: 325px;
         height: 375px;
     }
 
-    .login-input{
-        width: 265px ;
+    .login-input {
+        width: 265px;
     }
 
-} 
+}
 
 @media (max-width: 425px) {
 
-    .login-imgg{
-       width: 300px;
+    .login-imgg {
+        width: 300px;
     }
 
-    .login-input{
-        width: 300px ;
+    .login-input {
+        width: 300px;
     }
 
-} 
+}
 
 @media (max-width: 425px) {
 
-    .login-imgg{
-       width: 300px;
+    .login-imgg {
+        width: 300px;
     }
 
-    .login-input{
-        width: 265px ;
+    .login-input {
+        width: 265px;
     }
 
-} 
+}
 
 @media (max-width: 1288px) {
 
-    .navbar-text{
-      margin-left: 30px;
+    .navbar-text {
+        margin-left: 30px;
     }
 
-} 
+}
 
 @media (max-width: 1138px) {
 
-    .navbar-text{
-      margin-left: 5px;
+    .navbar-text {
+        margin-left: 5px;
     }
 
-} 
+}
 
 @media (max-width: 1062px) {
 
-    .search-input{
-     width: 280px;
+    .search-input {
+        width: 280px;
     }
-
-} 
-@media (max-width: 991px) {
-
-    .header{
-     height: 300px;
-    }
-.nav-logo{
-    display: grid;
-    justify-content: center;
 
 }
-} 
+
+@media (max-width: 991px) {
+
+    .header {
+        height: 300px;
+    }
+
+    .nav-logo {
+        display: grid;
+        justify-content: center;
+
+    }
+}

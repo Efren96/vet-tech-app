@@ -1,16 +1,15 @@
 const { Pet } = require('../models');
-
 const { faker } = require('@faker-js/faker');
 // faker.seed(1);
 
-// Initialize an empty array to store the objects
+// initialize an empty array to store the objects
 const petdata = [];
 
-// Define the number of objects you want to create
+// define the number of objects you want to create
 const totalCats = 20; // Change this to the desired number of objects
 const totalDogs = 20; // Change this to the desired number of objects
 
-// Create the objects and add them to the array
+// create the objects and add them to the array
 for (let i = 0; i < totalDogs; i++) {
   const newDog = {
     firstName: faker.person.firstName(),

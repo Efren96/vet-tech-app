@@ -1,3 +1,4 @@
+// logic to create a new pet on dashboard page
 const createPetButton = document.getElementById("create-pet-button");
 const newPetForm = document.getElementById("add-pet-form");
 

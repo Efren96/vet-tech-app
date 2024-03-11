@@ -1,8 +1,11 @@
 const deletePetButtonEl = document.getElementById("delete-pet-button");
+const updatePetButton = document.getElementById("update-pet-button");
+const updatePetForm = document.getElementById("update-pet-form");
 
+// logic to delete pet on profile page
 const deletePet = async (event) => {
     event.preventDefault();
-   
+
     const pet_id = document.querySelector("#pet-id").textContent;
     console.log(pet_id);
 
@@ -23,9 +26,7 @@ const deletePet = async (event) => {
     }
 };
 
-const updatePetButton = document.getElementById("update-pet-button");
-const updatePetForm = document.getElementById("update-pet-form");
-
+// logic to update pet on profile page
 const updatePet = async (event) => {
     event.stopPropagation();
     event.preventDefault();
@@ -73,5 +74,4 @@ updatePetButton.addEventListener("click", function () {
 });
 
 updatePetForm.addEventListener('submit', updatePet);
-
 deletePetButtonEl.addEventListener("click", deletePet);
