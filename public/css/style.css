@@ -485,3 +485,22 @@ h1 {
 
     }
 }
+
+@media (max-width: 1000px) {
+.search-button {
+    display: none;
+}
+
+.search-input {
+    display: none;
+}
+
+.header {
+    height: auto;
+}
+
+.nav-logo {
+    display: inline-block;
+}
+
+}
