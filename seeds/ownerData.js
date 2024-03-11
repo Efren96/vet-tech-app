@@ -13,7 +13,7 @@ for (let i = 0; i < totalOwners; i++) {
     firstName: faker.person.firstName(),
     lastName: faker.person.lastName(),
     age: faker.number.int({ min: 18, max: 80 }),
-    phoneNumber: faker.phone.number(),
+    phoneNumber: faker.string.numeric({length: 10, allowLeadingZeros: false}),
     homeAddress: faker.location.streetAddress(),
   };
   ownerdata.push(newOwner);
